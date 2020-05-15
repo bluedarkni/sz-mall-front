@@ -21,9 +21,9 @@ export function setUser(user) {
 }
 
 export function getUser() {
-  Cookies.get(userKey)
+  return Cookies.get(userKey)
 }
 
 export function removeToken() {
-  return Cookies.remove(TokenKey)
+  return Cookies.remove(tokenKey)
 }

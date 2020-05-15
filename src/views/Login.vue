@@ -14,8 +14,6 @@
 
 <script>
 import { encrypt } from '../utils/rsaEncrypt'
-// import Axios from 'axios'
-// import Axios from 'axios'
 import Request from '../utils/request'
 import Settings from '../settings'
 import {getToken, setToken, setUser} from '../utils/auth'
@@ -58,7 +56,7 @@ export default {
         .then((response)=> {
           setToken(response.data.token)
           setUser(response.data.user)
-          this.$router.push('/home')
+          this.$router.push('/index')
         })
         .catch((error)=> {
           alert(error)

@@ -5,9 +5,19 @@
 </template>
 
 <script>
-    export default {
-        name: "Home"
+  import {getUser} from '../utils/auth'
+  export default {
+    name: "home",
+    data() {
+      return {
+        username: ''
+      }
+    },
+    created() {
+      let user = getUser()
+      this.username = user.username
     }
+  }
 </script>
 
 <style scoped>
