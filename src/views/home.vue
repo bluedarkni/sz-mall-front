@@ -1,21 +1,25 @@
 <template>
   <div><h1>首页</h1>
-  <h2>{{username}}</h2>
+    <h2>username: {{username}}</h2>
+    <h2>token: {{token}}</h2>
   </div>
 </template>
 
 <script>
-  import {getUser} from '../utils/auth'
+  import Settings from '../settings'
+  import Cookies from 'js-cookie'
+  import {getToken, getUser} from '../utils/auth'
+
   export default {
-    name: "home",
-    data() {
+    name: 'Home',
+    data () {
       return {
-        username: ''
+        username: Cookies.get(Settings.userKey).username,
+        token: Cookies.get(Settings.tokenKey)
       }
     },
-    created() {
-      let user = getUser()
-      this.username = user.username
+    created () {
+      alert(Cookies.get(Settings.userKey))
     }
   }
 </script>
